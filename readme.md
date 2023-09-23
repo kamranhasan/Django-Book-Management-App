@@ -7,30 +7,30 @@ Follow these steps to run this Django project using Docker. Docker allow us to c
 - [Docker](https://www.docker.com/products/docker-desktop) installed on your system.
 
 ## Step 1: Clone Your Project
-## Navigate to the directory where this Django project is located.
+### Navigate to the directory where this Django project is located.
 cd /path/to/your/project/directory
 
 ## Step 2: Build the Docker Image
-## Build a Docker image for this Django project using the provided Dockerfile.
+### Build a Docker image for this Django project using the provided Dockerfile.
 docker build -t book-writer-app .
 
 ## Step 3: Run the Docker Container
-## Run a Docker container using the built image.
+### Run a Docker container using the built image.
 docker run -d --name book-writer-container -p 8000:8000 book-writer-app
 
 ## Step 4: Access Your Django Application
-## Your Django application should now be running inside a Docker container.
-## You can access it by opening a web browser and going to:
-## http://localhost:8000/
-## This assumes that your Django application is configured to run on port 8000.
+### Your Django application should now be running inside a Docker container.
+### You can access it by opening a web browser and going to:
+### http://localhost:8000/
+### This assumes that your Django application is configured to run on port 8000.
 
 ## Step 5: Stop and Remove the Container
-## To stop and remove the Docker container when you're done.
+### To stop and remove the Docker container when you're done.
 docker stop book-writer-container
 docker rm book-writer-container
 
 ## Step 6: Clean Up (Optional)
-## If you want to remove the Docker image as well.
+### If you want to remove the Docker image as well.
 docker rmi book-writer-app
 
 # API DOCUMENTATION
