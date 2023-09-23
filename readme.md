@@ -53,7 +53,7 @@ Represents sections within a book. Sections can be nested within other sections.
 |-------------------|---------------|-----------------------------------------------------|
 | `title`           | CharField     | The title of the section.                           |
 | `book`            | ForeignKey    | The book to which the section belongs (linked to Book model). |
-| `parent_section`  | ForeignKey    | Parent section to which this section is nested (self-referential). |
+
 
 ## Subsection
 
@@ -63,6 +63,7 @@ Represents subsections within a section.
 |------------|---------------|-----------------------------------------------------|
 | `title`    | CharField     | The title of the subsection.                       |
 | `section`  | ForeignKey    | The section to which the subsection belongs (linked to Section model). |
+| `parent_subsection`  | ForeignKey    | Parent sub section to which this sub section is nested (self-referential). |
 
 # API DOCUMENTATION
 
