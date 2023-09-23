@@ -33,6 +33,37 @@ Follow these steps to run this Django project using Docker. Docker allow us to c
 ### If you want to remove the Docker image as well.
 `docker rmi book-writer-app`
 
+# Django Model Schemas
+
+## Book
+
+Represents books in the system.
+
+| Field         | Type          | Description                                      |
+|---------------|---------------|--------------------------------------------------|
+| `title`       | CharField     | The title of the book.                          |
+| `author`      | ForeignKey    | The author of the book (linked to User model).  |
+| `collaborators`| ManyToManyField | Collaborators on the book (linked to User model). |
+
+## Section
+
+Represents sections within a book. Sections can be nested within other sections.
+
+| Field             | Type          | Description                                         |
+|-------------------|---------------|-----------------------------------------------------|
+| `title`           | CharField     | The title of the section.                           |
+| `book`            | ForeignKey    | The book to which the section belongs (linked to Book model). |
+| `parent_section`  | ForeignKey    | Parent section to which this section is nested (self-referential). |
+
+## Subsection
+
+Represents subsections within a section.
+
+| Field      | Type          | Description                                         |
+|------------|---------------|-----------------------------------------------------|
+| `title`    | CharField     | The title of the subsection.                       |
+| `section`  | ForeignKey    | The section to which the subsection belongs (linked to Section model). |
+
 # API DOCUMENTATION
 
 # User Registration
